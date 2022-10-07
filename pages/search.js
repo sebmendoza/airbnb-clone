@@ -3,10 +3,11 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
-  //   console.log({ searchResults });
+  // console.log({ searchResults });
   //   console.log(router.query)   gives an object
   const { location, startDate, endDate, numofGuests } = router.query;
 
@@ -51,6 +52,9 @@ function Search({ searchResults }) {
               )
             )}
           </div>
+        </section>
+        <section className="hidden xl:inline-flex xl:min-w-[600px] cursor-move">
+          <Map searchResults={searchResults} />
         </section>
       </main>
 
